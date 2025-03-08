@@ -20,6 +20,11 @@ const Home = () => {
   }, [pasteId]);
 
   function createPaste() {
+    if (!title.trim() || !value.trim()) {
+      alert("Title and content cannot be empty!");
+      return;
+    }
+    
     const paste = {
       title: title,
       content: value,
